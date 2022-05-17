@@ -2,6 +2,7 @@ package com.osrc.stats.service;
 
 import com.osrc.stats.pojo.UserStatsContent;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.stereotype.Service;
 
 /**
@@ -11,6 +12,7 @@ import org.springframework.stereotype.Service;
 @Service
 public class UserStatsService {
 
+	@Qualifier("com.osrc.stats.service.UserStatsClient")
 	@Autowired
 	private UserStatsClient userStatsClient;
 

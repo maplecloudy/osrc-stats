@@ -19,3 +19,7 @@ spring:
     cache: true
     # 模板路径
     template-loader-path: classpath:/templates/
+
+feign:
+  hystrix:
+    enabled: true
