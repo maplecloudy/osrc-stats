@@ -1,5 +1,5 @@
 server:
-  port: 80
+  port: 1180
   servlet:
     context-path: /api
 
