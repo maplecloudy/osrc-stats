@@ -1,0 +1,21 @@
+server:
+  port: 80
+  servlet:
+    context-path: /api
+
+logging:
+  level:
+    root: info
+
+spring:
+  freemarker:
+    # 模板后缀名
+    suffix: .ftl
+    # 文档类型
+    content-type: image/svg+xml
+    # 页面编码
+    charset: UTF-8
+    # 页面缓存
+    cache: true
+    # 模板路径
+    template-loader-path: classpath:/templates/

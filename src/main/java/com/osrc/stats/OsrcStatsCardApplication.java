@@ -1,0 +1,18 @@
+package com.osrc.stats;
+
+import org.springframework.boot.SpringApplication;
+import org.springframework.boot.autoconfigure.SpringBootApplication;
+import org.springframework.cloud.openfeign.EnableFeignClients;
+
+/**
+ * @author tom
+ */
+@SpringBootApplication
+@EnableFeignClients
+public class OsrcStatsCardApplication {
+
+	public static void main(String[] args) {
+		SpringApplication.run(OsrcStatsCardApplication.class, args);
+	}
+
+}
