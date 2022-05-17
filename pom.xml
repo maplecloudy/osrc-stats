@@ -62,7 +62,7 @@
             <plugin>
                 <groupId>com.maplecloudy.osrt</groupId>
                 <artifactId>maplecloudy-osrt-maven-plugin</artifactId>
-                <version>1.0.0-RELEASE</version>
+                <version>1.1.0-SNAPSHOT</version>
                 <executions>
                     <execution>
                         <goals>
