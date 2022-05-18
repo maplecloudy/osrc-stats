@@ -42,6 +42,7 @@ public class OsrcStatsService {
 	}
 
 	/**
+	 * https://github.com/anuraghazra/github-readme-stats/blob/master/src/calculateRank.js
 	 * 根据stats指标计算用户评级
 	 * @param statsContent stats
 	 * @return 评级  A A+ A++ A+++
