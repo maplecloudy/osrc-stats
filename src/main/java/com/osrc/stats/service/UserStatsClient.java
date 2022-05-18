@@ -10,7 +10,7 @@ import org.springframework.web.bind.annotation.RequestParam;
  * @author tom
  * @date 2022/5/17 11:45
  */
-@FeignClient(name = "osrc-center", url = "https://page-os.osrc.com", fallback = UserStatsClientFallback.class)
+@FeignClient(name = "osrc-center", url = "https://page-os.osrc.com", fallbackFactory = UserStatsClientFallbackFactory.class)
 public interface UserStatsClient {
 
 	/**
