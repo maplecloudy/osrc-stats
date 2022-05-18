@@ -1,39 +1,39 @@
 package com.osrc.stats.pojo;
 
 /**
- * user stats entity
+ * osrc stats entity
  * @author tom
  * @date 2022/5/16 16:03
  */
-public class UserStatsContent {
+public class OsrcStatsContent {
 
 	/**
-	 * 用户下项目数量
+	 * 主体下项目数量
 	 */
 	private int totalProject;
 
 	/**
-	 * 用户下运行时数量
+	 * 主体下运行时数量
 	 */
 	private int totalRunTime;
 
 	/**
-	 * 用户下项目已获取的总喜欢数
+	 * 主体下项目已获取的总喜欢数
 	 */
 	private int totalStarEarned;
 
 	/**
-	 * 用户下运行时被点击观看的总次数
+	 * 主体下运行时被点击观看的总次数
 	 */
 	private int totalWatched;
 
 	/**
-	 * 用户的follower数量
+	 * 主体的follower数量
 	 */
 	private int totalFollower;
 
 	/**
-	 * 用户的总体质量等级 A A+ A++ A+++
+	 * 主体的总体质量等级 A A+ A++ A+++
 	 */
 	private String rank = "A+";
 

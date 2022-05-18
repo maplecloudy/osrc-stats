@@ -7,17 +7,18 @@ import org.slf4j.LoggerFactory;
 import org.springframework.stereotype.Component;
 
 /**
- * user stats fall back factory
+ * organization stats fall back factory
  * @author tom
  * @date 2022/5/17 11:45
  */
 @Component
-public class UserStatsClientFallbackFactory implements FallbackFactory<UserStatsClient> {
+public class OrganizationStatsClientFallbackFactory implements FallbackFactory<OrganizationStatsClient> {
 
-	private static final Logger log = LoggerFactory.getLogger(UserStatsClientFallbackFactory.class);
+	private static final Logger log = LoggerFactory.getLogger(
+			OrganizationStatsClientFallbackFactory.class);
 
 	@Override
-	public UserStatsClient create(Throwable throwable) {
+	public OrganizationStatsClient create(Throwable throwable) {
 		log.warn(throwable.getMessage(), throwable);
 		return username -> new OsrcStatsContent();
 	}

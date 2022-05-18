@@ -1,6 +1,6 @@
 package com.osrc.stats.service;
 
-import com.osrc.stats.pojo.UserStatsContent;
+import com.osrc.stats.pojo.OsrcStatsContent;
 import org.springframework.cloud.openfeign.FeignClient;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
@@ -10,7 +10,7 @@ import org.springframework.web.bind.annotation.RequestParam;
  * @author tom
  * @date 2022/5/17 11:45
  */
-@FeignClient(name = "osrc-center", url = "https://page-os.osrc.com", fallbackFactory = UserStatsClientFallbackFactory.class)
+@FeignClient(name = "user-osrc-center", url = "https://page-os.osrc.com", fallbackFactory = UserStatsClientFallbackFactory.class)
 public interface UserStatsClient {
 
 	/**
@@ -19,6 +19,6 @@ public interface UserStatsClient {
 	 * @return stats信息
 	 */
 	@RequestMapping(value = "/api/users/stats", method = RequestMethod.GET)
-	UserStatsContent getUserStats(@RequestParam("username") String username);
+	OsrcStatsContent getUserStats(@RequestParam("username") String username);
 
 }

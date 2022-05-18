@@ -1,6 +1,6 @@
 package com.osrc.stats.service;
 
-import com.osrc.stats.pojo.UserStatsContent;
+import com.osrc.stats.pojo.OsrcStatsContent;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.stereotype.Service;
@@ -10,20 +10,34 @@ import org.springframework.stereotype.Service;
  * @date 2022/5/16 16:21
  */
 @Service
-public class UserStatsService {
+public class OsrcStatsService {
 
 	@Qualifier("com.osrc.stats.service.UserStatsClient")
 	@Autowired
 	private UserStatsClient userStatsClient;
+
+	@Autowired
+	private OrganizationStatsClient organizationStatsClient;
 
 	/**
 	 * 根据osrc服务获取指定用户的stats指标信息
 	 * @param username 用户名称
 	 * @return stats content
 	 */
-	public UserStatsContent getUserStatsContent(String username) {
-		UserStatsContent statsContent = userStatsClient.getUserStats(username);
-		statsContent.setRank(calculateUserRank(statsContent));
+	public OsrcStatsContent getUserStatsContent(String username) {
+		OsrcStatsContent statsContent = userStatsClient.getUserStats(username);
+		statsContent.setRank(calculateStatsRank(statsContent));
+		return statsContent;
+	}
+
+	/**
+	 * 根据osrc服务获取指定组织的stats指标信息
+	 * @param organizationId 组织ID
+	 * @return stats content
+	 */
+	public OsrcStatsContent getOrganizationStatsContent(Integer organizationId) {
+		OsrcStatsContent statsContent = organizationStatsClient.getOrganizationStats(organizationId);
+		statsContent.setRank(calculateStatsRank(statsContent));
 		return statsContent;
 	}
 
@@ -32,7 +46,7 @@ public class UserStatsService {
 	 * @param statsContent stats
 	 * @return 评级  A A+ A++ A+++
 	 */
-	private String calculateUserRank(UserStatsContent statsContent) {
+	private String calculateStatsRank(OsrcStatsContent statsContent) {
 		int score = statsContent.getTotalProject() * 10 + statsContent.getTotalRunTime() * 5
 				+ statsContent.getTotalFollower() * 2 + statsContent.getTotalStarEarned();
 		StringBuilder rankBuilder = new StringBuilder("A");

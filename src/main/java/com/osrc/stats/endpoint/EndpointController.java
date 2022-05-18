@@ -1,8 +1,8 @@
 package com.osrc.stats.endpoint;
 
 import com.osrc.stats.pojo.Constant;
-import com.osrc.stats.pojo.UserStatsContent;
-import com.osrc.stats.service.UserStatsService;
+import com.osrc.stats.pojo.OsrcStatsContent;
+import com.osrc.stats.service.OsrcStatsService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -21,12 +21,21 @@ public class EndpointController {
 	private static final String STATS_PAGE = "stats_";
 
 	@Autowired
-	private UserStatsService statsService;
+	private OsrcStatsService statsService;
 
 	@GetMapping(produces = "image/svg+xml")
-	public String userStatsInfo(@RequestParam(value = "username") String username,
+	public String osrcStatsInfo(
+			@RequestParam(value = "username", required = false) String username,
+			@RequestParam(value = "organization", required = false) Integer organization,
 			@RequestParam(value = "theme", required = false, defaultValue = Constant.DEFAULT) String theme, Model model) {
-		UserStatsContent statsContent = statsService.getUserStatsContent(username);
+		OsrcStatsContent statsContent;
+		if (username != null) {
+			statsContent = statsService.getUserStatsContent(username);
+		} else if (organization != null) {
+			statsContent = statsService.getOrganizationStatsContent(organization);
+		} else {
+			statsContent = new OsrcStatsContent();
+		}
 		model.addAttribute("stats", statsContent);
 		return STATS_PAGE + theme;
 	}
