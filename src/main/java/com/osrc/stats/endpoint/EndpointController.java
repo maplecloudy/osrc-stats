@@ -19,7 +19,7 @@ import org.springframework.web.bind.annotation.RequestParam;
 public class EndpointController {
 
 	private static final String STATS_PAGE = "stats_";
-	private static final String OSRC_URL = "https://page-os.osrc.com/projects/project_786689368686354432";
+	private static final String OSRC_URL = "https://page-community.osrc.com/osrc/projects/project_786689368686354432";
 
 	@Autowired
 	private OsrcStatsService statsService;
@@ -35,7 +35,7 @@ public class EndpointController {
 		} else if (organization != null) {
 			statsContent = statsService.getOrganizationStatsContent(organization);
 		} else {
-			return"redirect:" + OSRC_URL;
+			return "redirect:" + OSRC_URL;
 		}
 		model.addAttribute("stats", statsContent);
 		return STATS_PAGE + theme;

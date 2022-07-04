@@ -1,5 +1,5 @@
 server:
-  port: 1180
+  port: ${random.int[10000,15000]}
   servlet:
     context-path: /api
 

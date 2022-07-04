@@ -5,3 +5,10 @@
 </p>
 
 
+### Quickly Start   
+
+```
+
+http://localhost:1180/api/stats?username=osrc
+
+```

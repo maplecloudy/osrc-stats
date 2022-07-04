@@ -111,7 +111,8 @@
             height="99%"
             stroke="#e4e2e2"
             width="379"
-            fill="#fffefe"
+            <#--   background color -->
+<#--            fill="#fffefe"-->
             stroke-opacity="1"
     />
 

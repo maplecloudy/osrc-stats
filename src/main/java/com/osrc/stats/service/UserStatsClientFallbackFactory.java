@@ -18,7 +18,7 @@ public class UserStatsClientFallbackFactory implements FallbackFactory<UserStats
 
 	@Override
 	public UserStatsClient create(Throwable throwable) {
-		log.warn(throwable.getMessage(), throwable);
+		log.warn(throwable.getMessage());
 		return username -> new OsrcStatsContent();
 	}
 }
