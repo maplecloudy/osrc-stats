@@ -127,7 +127,7 @@
                     y="0"
                     class="header"
                     data-testid="header"
-            >OSRC Stats
+            >${stats.name}'s stats
             </text>
         </g>
     </g>

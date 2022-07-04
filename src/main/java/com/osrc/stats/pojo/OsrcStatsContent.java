@@ -8,6 +8,11 @@ package com.osrc.stats.pojo;
 public class OsrcStatsContent {
 
 	/**
+	 * 账户名称
+	 */
+	private String name;
+
+	/**
 	 * 主体下项目数量
 	 */
 	private int totalProject;
@@ -36,6 +41,14 @@ public class OsrcStatsContent {
 	 * 主体的总体质量等级 A A+ A++ A+++
 	 */
 	private String rank = "A+";
+
+	public String getName() {
+		return name;
+	}
+
+	public void setName(String name) {
+		this.name = name;
+	}
 
 	public int getTotalProject() {
 		return totalProject;
