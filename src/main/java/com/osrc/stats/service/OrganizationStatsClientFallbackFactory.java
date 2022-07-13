@@ -20,6 +20,6 @@ public class OrganizationStatsClientFallbackFactory implements FallbackFactory<O
 	@Override
 	public OrganizationStatsClient create(Throwable throwable) {
 		log.warn(throwable.getMessage(), throwable);
-		return username -> new OsrcStatsContent();
+		return organizationId -> new OsrcStatsContent(String.valueOf(organizationId));
 	}
 }

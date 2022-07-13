@@ -19,7 +19,7 @@ import org.springframework.web.bind.annotation.RequestParam;
 public class EndpointController {
 
 	private static final String STATS_PAGE = "stats_";
-	private static final String OSRC_URL = "https://page-community.osrc.com/osrc/projects/project_786689368686354432";
+	private static final String OSRC_URL = "https://github.com/maplecloudy/osrc-stats";
 
 	@Autowired
 	private OsrcStatsService statsService;

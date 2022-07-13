@@ -7,6 +7,13 @@ package com.osrc.stats.pojo;
  */
 public class OsrcStatsContent {
 
+	public OsrcStatsContent() {
+	}
+
+	public OsrcStatsContent(String name) {
+		this.name = name;
+	}
+
 	/**
 	 * 账户名称
 	 */
