@@ -27,6 +27,9 @@ public class OsrcStatsService {
 	public OsrcStatsContent getUserStatsContent(String username) {
 		OsrcStatsContent statsContent = userStatsClient.getUserStats(username);
 		statsContent.setRank(calculateStatsRank(statsContent));
+		if (statsContent.getName() == null) {
+			statsContent.setName(username);
+		}
 		return statsContent;
 	}
 

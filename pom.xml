@@ -60,14 +60,14 @@
                 <artifactId>spring-boot-maven-plugin</artifactId>
             </plugin>
             <plugin>
-                <groupId>com.maplecloudy.osrt</groupId>
-                <artifactId>maplecloudy-osrt-maven-plugin</artifactId>
-                <version>1.1.0-SNAPSHOT</version>
+                <groupId>com.maplecloudy.osrc</groupId>
+                <artifactId>maplecloudy-osrc-maven-plugin</artifactId>
+                <version>1.0.2</version>
                 <executions>
                     <execution>
                         <goals>
                             <goal>repackage</goal>
-                            <goal>install-osrt-app</goal>
+                            <goal>install-osrc-app</goal>
                         </goals>
                     </execution>
                 </executions>
